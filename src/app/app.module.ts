@@ -8,7 +8,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {UploadComponent} from './upload.component';
 import {UploadDisplayComponent} from './upload-display.component';
 
-import {UploadFileComponent} from './upload-file.component';
+
 import {FileSelectDirective} from 'ng2-file-upload';
 
 
@@ -18,7 +18,6 @@ import {FileSelectDirective} from 'ng2-file-upload';
     DashboardComponent,
     UploadComponent,
     UploadDisplayComponent,
-    UploadFileComponent,
     FileSelectDirective
   ],
   imports: [
