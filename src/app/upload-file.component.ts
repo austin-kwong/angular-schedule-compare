@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
 
-const URL = './send';
+const URL = 'https://evening-anchorage-3159.herokuapp.com/api/';
 
 @Component({
   selector: 'upload-file',

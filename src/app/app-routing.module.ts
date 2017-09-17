@@ -17,10 +17,6 @@ const routes: Routes = [
   {
     path: 'upload',
     component: UploadComponent
-  },
-  {
-    path: 'upload/send',
-    component: DashboardComponent
   }
 ]
 
