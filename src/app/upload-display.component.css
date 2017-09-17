@@ -1,0 +1,31 @@
+.availabilityDisplay {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.timeDisplay {
+  display:grid;
+  margin: 0px 15px;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.timeSegment{
+  text-align: center;
+  margin: 1px;
+  display: block;
+}
+
+.timeSegment.available {
+  background-color: chartreuse;
+}
+.timeSegment.notAvailable{
+  background-color: red;
+}
+
+.container{
+  display: grid;
+  grid-template-columns: 10% auto;
+  grid-template-rows: 1.5em auto;
+}

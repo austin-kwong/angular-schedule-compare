@@ -1,0 +1,14 @@
+<h2>Welcome to the UploadComponent</h2>
+<a *ngIf="availability" class="container">
+  <a class="timeDisplay">
+    <div *ngFor="let time of times">
+      {{time}}
+    </div>
+  </a>
+  <div class="availabilityDisplay">
+    <div *ngFor="let day of weekdays">{{day}}</div>
+    <div *ngFor="let timeSlot of availability">
+      <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
+    </div>
+  </div>
+</a>
