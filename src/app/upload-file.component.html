@@ -1,5 +1,4 @@
-<div>
+<div style="margin: 10px 10px;">
   <input type="file" ng2FileSelect [uploader]="uploader" />
-  <input type="submit" onsubmit="uploader.getNotUploadedItems().pop().upload()"/>
+  <input type="submit" (click)="collectFile()"/>
 </div>
-
