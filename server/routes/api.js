@@ -29,52 +29,75 @@ router.post('/',upload.single('file'), (req, res) => {
     // }
 
     let eventPairs = [];
-    for (let event of calendarObject.VCALENDAR[0].VEVENT) {
-      // console.log(event);
-      eventPairs.push({
-        "STARTTIME": event["DTSTART;TZID=America/Vancouver"],
-        "ENDTIME": event["DTEND;TZID=America/Vancouver"]
-      });
-    }
-    let availability = new Array(48*5).fill(0);
-
-    for (let event of eventPairs){
-      /* each event is in the form { STARTTIME: "<>", ENDTIME: "<>"}*/
-      let eventStart = event.STARTTIME;
-      let eventEnd = event.ENDTIME;
-
-      let year = eventStart.slice(0, 4);
-      let month = parseInt(eventStart.slice(4, 6)) - 1;
-      let day = eventStart.slice(6, 8);
-      let hours = eventStart.slice(9, 11);
-      let minutes = eventStart.slice(11, 13);
-
-      let startDate = new Date(year, month, day, hours, minutes);
-
-      if(!(startDate.getYear() === yearToKeep)) continue;
-
-
-      year = eventEnd.slice(0, 4);
-      month = parseInt(eventEnd.slice(4, 6)) - 1;
-      day = eventEnd.slice(6, 8);
-      hours = eventEnd.slice(9, 11);
-      minutes = eventEnd.slice(11, 13);
-
-      let endDate = new Date(year, month, day, hours, minutes);
-
-      // console.log("StartDate", startDate);
-      // populate starting at start time, in 30 minute increments to represent the day
-      let beginIndex = (2*hours + Math.floor(minutes / 30)) + ((startDate.getDay() - 1) * 48);
-      // console.log("Begin Index: ", beginIndex);
-      let duration = (endDate.getTime()- startDate.getTime())/(1000*60*30);
-      // console.log("endDate.getTime(): ", endDate.getTime);
-      // console.log("startDate.getTime(): ", startDate.getTime());
-      for(let i = 0;i < duration; i++ ){
-        availability[beginIndex + i] = 1;
+    if(calendarObject.VCALENDAR && calendarObject.VCALENDAR[0]) {
+      for (let event of calendarObject.VCALENDAR[0].VEVENT) {
+        // console.log(event);
+        eventPairs.push({
+          "STARTTIME": event["DTSTART;TZID=America/Vancouver"],
+          "ENDTIME": event["DTEND;TZID=America/Vancouver"]
+        });
       }
+      let availability = {
+        0: new Array(48).fill(0),
+        1: new Array(48).fill(0),
+        2: new Array(48).fill(0),
+        3: new Array(48).fill(0),
+        4: new Array(48).fill(0)
+      };
+
+
+      for (let event of eventPairs) {
+        /* each event is in the form { STARTTIME: "<>", ENDTIME: "<>"}*/
+        let eventStart = event.STARTTIME;
+        let eventEnd = event.ENDTIME;
+        let year = eventStart.slice(0, 4);
+
+        let month = parseInt(eventStart.slice(4, 6)) - 1;
+        let day = eventStart.slice(6, 8);
+        let hours = eventStart.slice(9, 11);
+        let minutes = eventStart.slice(11, 13);
+
+        let startDate = new Date(year, month, day, hours, minutes);
+        //startDate.setHours(startDate.getHours() - 7);
+        // console.log(eventStart);
+        // console.log(startDate.toDateString(), startDate.toTimeString());
+
+
+        if (startDate.getFullYear() != yearToKeep) {
+          continue;
+        }
+
+
+        year = eventEnd.slice(0, 4);
+        month = parseInt(eventEnd.slice(4, 6)) - 1;
+        day = eventEnd.slice(6, 8);
+        hours = eventEnd.slice(9, 11);
+        minutes = eventEnd.slice(11, 13);
+
+        let endDate = new Date(year, month, day, hours, minutes);
+        //endDate.setHours(endDate.getHours() - 7);
+        //
+        // console.log("StartDate", startDate, " on day: ", startDate.getDay());
+        // console.log("EndDate", endDate);
+        // populate starting at start time, in 30 minute increments to represent the day
+        let beginIndex = (2 * startDate.getHours() + Math.floor(startDate.getMinutes() / 30));
+        // console.log("2*startDate.getHours():", 2 * startDate.getHours(), "Math.floor(startDate.getMinutes()/30: ", Math.floor(startDate.getMinutes() / 30));
+        let duration = (endDate.getTime() - startDate.getTime()) / (1000 * 60 * 30);
+        // console.log("endDate.getTime(): ", endDate.getTime);
+        // console.log("startDate.getTime(): ", startDate.getTime());
+        // console.log("Populating starting from ", beginIndex, "for duration: ", duration);
+        for (let i = 0; i < duration; i++) {
+          availability[startDate.getDay() - 1][beginIndex + i] = 1;
+        }
+
+      }
+      res.send(availability);
+    } // guarded for proper format, otherwise return error
+    else {
+      res.status(500).send('File selected is not a recognized type');
     }
-    res.send(availability);
   });
+
 });
 
 module.exports = router;

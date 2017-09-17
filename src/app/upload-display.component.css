@@ -1,20 +1,26 @@
-.availabilityDisplay {
+.container {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: 10% repeat(5, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas:"times monday tuesday wednesday thursday friday";
+
 }
+
 
 .timeDisplay {
   display:grid;
+  grid-area: times;
   margin: 0px 15px;
   grid-template-columns: auto;
-  grid-template-rows: repeat(10, 15px);
+  grid-template-rows: repeat(48, 20px);
+  overflow: hidden;
+  text-wrap: none;
 }
 
-.timeSegment{
-  text-align: center;
+.timeColumn{
+  display: grid;
   margin: 1px;
-  display: block;
+
 }
 
 .timeSegment.available {
@@ -24,8 +30,3 @@
   background-color: darkgrey;
 }
 
-.container{
-  display: grid;
-  grid-template-columns: 10% auto;
-  grid-template-rows: 1.5em auto;
-}

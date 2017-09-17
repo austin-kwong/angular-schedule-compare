@@ -11,30 +11,28 @@ const URL = '/api';
       <input type="file" ng2FileSelect [uploader]="uploader" />
       <input type="submit" (click)="collectFile()"/>
     </div>
-    <div>The availability {{availability}}</div>
-    <div>The Response Headers {{headers}}</div>
-    <div>Submit counter: {{counter}}</div>
-    <upload-display [availability]="availability"></upload-display>
+    <div *ngIf="error">{{error}}</div>
+    <upload-display *ngIf="availability" [availability]="availability"></upload-display>
   `
 })
 
 export class UploadComponent implements OnInit {
   public availability: boolean[];
-  public headers: ParsedResponseHeaders;
+  public error: string;
   public uploader: FileUploader;
-  public counter = 5;
   ngOnInit(): void {
     this.uploader = new FileUploader({url: URL});
   }
   collectFile(): void {
     const self = this;
     this.uploader.onCompleteItem = function (item, response, status, headers) {
-      ++self.counter;
-      console.log('value of counter is now: ', self.counter);
       if (status === 200) {
         console.log('Setting availability to be ', response);
         self.availability = JSON.parse(response);
-        self.headers = headers;
+        self.error = null;
+      } else if (status === 500) {
+        console.log('Received Error from api', response);
+        self.error = response;
       }
     };
       for (const file of this.uploader.queue){

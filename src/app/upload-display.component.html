@@ -1,14 +1,44 @@
 <h2>Welcome to the UploadComponent</h2>
 <a  class="container">
   <a class="timeDisplay">
-    <div *ngFor="let time of times">
+    <div *ngFor="let time of times" class="timeSegment">
       {{time}}
     </div>
   </a>
-  <div class="availabilityDisplay">
-    <div *ngFor="let day of weekdays">{{day}}</div>
-    <div *ngFor="let timeSlot of availability">
+  <div style="grid-area: monday" class="timeColumn">
+    Monday
+    <div *ngFor="let timeSlot of availability[0]">
       <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
     </div>
   </div>
+  <div style="grid-area: tuesday" class="timeColumn">
+    Tuesday
+    <div *ngFor="let timeSlot of availability[1]">
+      <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
+    </div>
+  </div>
+  <div style="grid-area: wednesday" class="timeColumn">
+    Wednesday
+    <div *ngFor="let timeSlot of availability[2]">
+      <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
+    </div>
+  </div>
+  <div style="grid-area: thursday" class="timeColumn">
+    Thursday
+    <div *ngFor="let timeSlot of availability[3]">
+      <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
+    </div>
+  </div>
+  <div style="grid-area: friday" class="timeColumn">
+    Friday
+    <div *ngFor="let timeSlot of availability[4]">
+      <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
+    </div>
+  </div>
+
+<!--
+  <div *ngFor="let timeSlot of availability">
+    <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
+  </div>
+  -->
 </a>
