@@ -7,6 +7,7 @@ const URL = '/api';
 @Component({
   selector: 'upload-page',
   template: `
+    <h2>Upload your UBC iCal.ics to visualize it below!</h2>
     <div style="margin-top: 30px;">
       <input type="file" ng2FileSelect [uploader]="uploader" />
       <input type="submit" (click)="collectFile()"/>
