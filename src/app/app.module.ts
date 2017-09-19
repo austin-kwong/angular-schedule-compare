@@ -11,6 +11,7 @@ import {UploadDisplayComponent} from './upload-display.component';
 
 import {FileUploadModule} from 'ng2-file-upload';
 import {UploadCompareComponent} from './upload-compare.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {UploadCompareComponent} from './upload-compare.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FileUploadModule
+    FileUploadModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

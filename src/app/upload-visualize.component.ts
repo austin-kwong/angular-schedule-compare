@@ -10,7 +10,7 @@ const URL = '/api/visualize';
 })
 
 export class UploadVisualizeComponent implements OnInit {
-  public availability: boolean[];
+  public availability: Object;
   public error: string;
   public uploader: FileUploader;
   ngOnInit(): void {
