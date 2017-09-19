@@ -2,7 +2,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { DashboardComponent } from './dashboard.component';
-import {UploadComponent} from './upload.component';
+import {UploadVisualizeComponent} from './upload-visualize.component';
+import {UploadCompareComponent} from './upload-compare.component';
 
 const routes: Routes = [
   {
@@ -15,8 +16,12 @@ const routes: Routes = [
     component: DashboardComponent
   },
   {
-    path: 'upload',
-    component: UploadComponent
+    path: 'visualize',
+    component: UploadVisualizeComponent
+  },
+  {
+    path: 'compare',
+    component: UploadCompareComponent
   }
 ]
 

@@ -2,22 +2,14 @@ import {Component, OnInit} from '@angular/core';
 
 import {FileUploader, ParsedResponseHeaders} from 'ng2-file-upload';
 
-const URL = '/api';
+const URL = '/api/visualize';
 
 @Component({
-  selector: 'upload-page',
-  template: `
-    <h2>Upload your UBC iCal.ics to visualize it below!</h2>
-    <div style="margin-top: 30px;">
-      <input type="file" ng2FileSelect [uploader]="uploader" />
-      <input type="submit" (click)="collectFile()"/>
-    </div>
-    <div *ngIf="error">{{error}}</div>
-    <upload-display *ngIf="availability" [availability]="availability"></upload-display>
-  `
+  selector: 'upload-visualize',
+  templateUrl: './upload-visualize.component.html'
 })
 
-export class UploadComponent implements OnInit {
+export class UploadVisualizeComponent implements OnInit {
   public availability: boolean[];
   public error: string;
   public uploader: FileUploader;
@@ -36,7 +28,7 @@ export class UploadComponent implements OnInit {
         self.error = response;
       }
     };
-      for (const file of this.uploader.queue){
+    for (const file of this.uploader.queue){
       console.log('Uploading file: ' + file.toString());
       file.upload();
     }

@@ -5,24 +5,26 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {DashboardComponent} from './dashboard.component';
 import {AppRoutingModule} from './app-routing.module';
-import {UploadComponent} from './upload.component';
+import {UploadVisualizeComponent} from './upload-visualize.component';
 import {UploadDisplayComponent} from './upload-display.component';
 
 
-import {FileSelectDirective} from 'ng2-file-upload';
+import {FileUploadModule} from 'ng2-file-upload';
+import {UploadCompareComponent} from './upload-compare.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
-    UploadComponent,
+    UploadVisualizeComponent,
     UploadDisplayComponent,
-    FileSelectDirective
+    UploadCompareComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FileUploadModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,7 @@
+<h2>Upload your UBC iCal.ics to visualize it below!</h2>
+<div style="margin-top: 30px;">
+  <input type="file" ng2FileSelect [uploader]="uploader" />
+  <input type="submit" value="Upload" (click)="collectFile()"/>
+</div>
+<div *ngIf="error">{{error}}</div>
+<upload-display *ngIf="availability" [availability]="availability"></upload-display>
