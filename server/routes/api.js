@@ -209,7 +209,7 @@ function matchAvailabilities(a1, a2){
 function matchDay(d1, d2){
   let res = new Array(48).fill(0);
   for(let i = 0; i < 48; i++){
-    res[i] = d1[i] && d2[i];
+    res[i] = !(d1[i] && d2[i]);
   }
   return res;
 }
