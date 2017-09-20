@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template-columns: 10% repeat(5, 20px);
+  grid-template-columns: 10% repeat(5, 1fr);
   grid-template-rows: auto;
   grid-template-areas:"times monday tuesday wednesday thursday friday";
   overflow-x: scroll;
@@ -27,6 +27,10 @@
   grid-template-rows: repeat(48, 1fr);
   margin: 1px;
 
+}
+
+.timeSegment{
+	min-width: 50px;
 }
 
 .timeSegment.available {
