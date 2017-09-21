@@ -1,0 +1,8 @@
+* Description
+Find it hard to co-ordinate with your friend's busy class schedule? If you're a UBC student, you're in luck! Simply download you and your friend's iCal.ics and compare them here!
+* Feature Backlog
+** [<2017-09-20 Wed>] ~ 10 hours in
+   - Simple user interface, with uploads using ng2-file-upload and FormData post methods
+   - Express backend with Multer parser to manipulate .ics data
+   - Display component renders the service response by subscription
+ 

@@ -1,28 +1,25 @@
-# AngularScheduleCompare
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1. Description</a></li>
+<li><a href="#sec-2">2. Feature Backlog</a>
+<ul>
+<li><a href="#sec-2-1">2.1. [<span class="timestamp-wrapper"><span class="timestamp">&lt;2017-09-20 Wed&gt;</span></span>] ~ 10 hours in</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
+# Description<a id="sec-1" name="sec-1"></a>
 
-## Development server
+Find it hard to co-ordinate with your friend's busy class schedule? If you're a UBC student, you're in luck! Simply download you and your friend's iCal.ics and compare them here!
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Feature Backlog<a id="sec-2" name="sec-2"></a>
 
-## Code scaffolding
+## [<span class="timestamp-wrapper"><span class="timestamp">&lt;2017-09-20 Wed&gt;</span></span>] ~ 10 hours in<a id="sec-2-1" name="sec-2-1"></a>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+-   Simple user interface, with uploads using ng2-file-upload and FormData post methods
+-   Express backend with Multer parser to manipulate .ics data
+-   Display component renders the service response by subscription
