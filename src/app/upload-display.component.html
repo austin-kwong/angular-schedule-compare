@@ -1,4 +1,10 @@
-<a  class="container">
+
+<div>
+  <select>
+    <option *ngFor="let time of times; let i = index;" (click)="updateStartTime(i)">{{time}}</option>
+  </select>
+</div>
+<a  *ngIf="validDisplay" class="container">
   <a class="timeDisplay">
     <div *ngFor="let time of times" class="timeSegment">
       {{time}}
@@ -6,31 +12,31 @@
   </a>
   <div style="grid-area: monday" class="timeColumn">
     Monday
-    <div *ngFor="let timeSlot of availability[0]">
+    <div *ngFor="let timeSlot of availabilityToDisplay[0]">
       <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
     </div>
   </div>
   <div style="grid-area: tuesday" class="timeColumn">
     Tuesday
-    <div *ngFor="let timeSlot of availability[1]">
+    <div *ngFor="let timeSlot of availabilityToDisplay[1]">
       <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
     </div>
   </div>
   <div style="grid-area: wednesday" class="timeColumn">
     Wednesday
-    <div *ngFor="let timeSlot of availability[2]">
+    <div *ngFor="let timeSlot of availabilityToDisplay[2]">
       <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
     </div>
   </div>
   <div style="grid-area: thursday" class="timeColumn">
     Thursday
-    <div *ngFor="let timeSlot of availability[3]">
+    <div *ngFor="let timeSlot of availabilityToDisplay[3]">
       <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
     </div>
   </div>
   <div style="grid-area: friday" class="timeColumn">
     Friday
-    <div *ngFor="let timeSlot of availability[4]">
+    <div *ngFor="let timeSlot of availabilityToDisplay[4]">
       <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
     </div>
   </div>

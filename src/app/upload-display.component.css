@@ -32,10 +32,11 @@
 
 .timeSegment{
 	min-width: 50px;
+  border-radius: 3px;
 }
 
 .timeSegment.available {
-  background-color: chartreuse;
+  background-color: cornflowerblue;
 }
 .timeSegment.notAvailable{
   background-color: darkgrey;
