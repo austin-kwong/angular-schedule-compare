@@ -107,7 +107,9 @@ export class DialPadComponent implements OnInit {
       for (const possibleCompletion of possible){
         res.push(cleanedInput + possibleCompletion);
       }
-      this.possiblePalindromes = res;
+      this.possiblePalindromes = res.filter((s) => {
+        this.stringIsPalindrome(DialPadComponent.convertToDialpad(s));
+      });
     } else {
       this.possiblePalindromes = [];
     }
