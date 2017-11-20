@@ -13,8 +13,10 @@ import * as assert from "assert";
       <div >
         <h2 [ngClass]="{palindrome: isPalindrome}">{{outputString}}</h2>
       </div>
-      <div *ngFor="let suggestion of possiblePalindromes">
-        {{suggestion}}
+      <div class="container">
+        <div *ngFor="let suggestion of possiblePalindromes">
+          {{suggestion}}
+        </div>
       </div>
     </div>
   `,
@@ -108,7 +110,10 @@ export class DialPadComponent implements OnInit {
         res.push(cleanedInput + possibleCompletion);
       }
       this.possiblePalindromes = res.filter((s) => {
-        return this.stringIsPalindrome(DialPadComponent.convertToDialpad(s));
+        if (this.stringIsPalindrome(DialPadComponent.convertToDialpad(s))) {
+          return true;
+        }
+        return false;
       });
     } else {
       this.possiblePalindromes = [];
