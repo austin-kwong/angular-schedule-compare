@@ -262,6 +262,8 @@ module.exports = module.exports.toString();
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DialPadComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_assert__ = __webpack_require__("../../../../assert/assert.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_assert___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_assert__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -269,21 +271,79 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 
-var DialPadComponent = (function () {
+
+var DialPadComponent = DialPadComponent_1 = (function () {
     function DialPadComponent() {
     }
-    DialPadComponent.prototype.ngOnInit = function () {
-        this.inputString = '';
-        this.outputString = '';
-        this.isPalindrome = false;
-    };
-    DialPadComponent.prototype.handleTextChange = function (event) {
-        this.outputString = this.inputString.replace(/[abcABC]/g, '2').replace(/[defDEF]/g, '3')
+    DialPadComponent.convertToDialpad = function (input) {
+        return input.replace(/[abcABC]/g, '2').replace(/[defDEF]/g, '3')
             .replace(/[ghiGHI]/g, '4').replace(/[jklJKL]/g, '5')
             .replace(/[mnoMNO]/g, '6').replace(/[pqrsPQRS]/g, '7')
             .replace(/[tuvTUV]/g, '8').replace(/[wxyzWXYZ]/g, '9')
             .replace(/\s/g, '');
+    };
+    DialPadComponent.getFamilyFromChar = function (char) {
+        __WEBPACK_IMPORTED_MODULE_1_assert__(char.length === 1);
+        switch (char.toLowerCase()) {
+            case 'a':
+            case 'b':
+            case 'c':
+                return ['a', 'b', 'c'];
+            case 'd':
+            case 'e':
+            case 'f':
+                return ['d', 'e', 'f'];
+            case 'g':
+            case 'h':
+            case 'i':
+                return ['g', 'h', 'i'];
+            case 'j':
+            case 'k':
+            case 'l':
+                return ['j', 'k', 'l'];
+            case 'm':
+            case 'n':
+            case 'o':
+                return ['m', 'n', 'o'];
+            case 'p':
+            case 'q':
+            case 'r':
+            case 's':
+                return ['p', 'q', 'r', 's'];
+            case 't':
+            case 'u':
+            case 'v':
+                return ['t', 'u', 'v'];
+            case 'w':
+            case 'x':
+            case 'y':
+            case 'z':
+                return ['w', 'x', 'y', 'z'];
+        }
+    };
+    DialPadComponent.prototype.ngOnInit = function () {
+        this.inputString = '';
+        this.outputString = '';
+        this.isPalindrome = false;
+        this.possiblePalindromes = [];
+    };
+    DialPadComponent.prototype.handleTextChange = function (event) {
+        this.outputString = DialPadComponent_1.convertToDialpad(this.inputString);
         this.isPalindrome = this.stringIsPalindrome(this.outputString);
+        var cleanedInput = this.inputString.trim().replace(/\s\n/g, '');
+        if (this.outputString.length > 0 && this.outputString.length < DialPadComponent_1.MAX_LENGTH && !this.isPalindrome) {
+            var possible = this.computePossibleStrings(cleanedInput);
+            console.log(possible);
+            var res = [];
+            for (var _i = 0, possible_1 = possible; _i < possible_1.length; _i++) {
+                var possibleCompletion = possible_1[_i];
+                res.push(cleanedInput + possibleCompletion);
+            }
+            this.possiblePalindromes = res;
+        }
+        else {
+            this.possiblePalindromes = [];
+        }
     };
     DialPadComponent.prototype.stringIsPalindrome = function (s) {
         for (var i = 0, j = s.length - 1; i < s.length && j >= 0; i++, j--) {
@@ -295,16 +355,60 @@ var DialPadComponent = (function () {
         }
         return true;
     };
+    /**
+     * Compute the possible strings that would be dialpad palindromic
+     * @param {string} s The current string
+     * @returns {string[]} A list of string completions that make the input palindromic
+     */
+    DialPadComponent.prototype.computePossibleStrings = function (s) {
+        console.log('Computing possible strings for: ', s);
+        // prioritize a "mostly palindromic" solution
+        var res = [];
+        if (this.stringIsPalindrome(DialPadComponent_1.convertToDialpad(s.substring(1)))) {
+            for (var _i = 0, _a = DialPadComponent_1.getFamilyFromChar(s.charAt(0)); _i < _a.length; _i++) {
+                var c = _a[_i];
+                res.push(c);
+            }
+            return res;
+        }
+        else {
+            var lastIndex = Math.ceil(s.length / 2);
+            var toMiddle = s.substring(0, lastIndex);
+            res = res.concat(this.recursiveConcat(toMiddle, ''));
+            return res;
+        }
+    };
+    DialPadComponent.prototype.recursiveConcat = function (s, ssf) {
+        var res = [];
+        if (ssf.length === DialPadComponent_1.MAX_LENGTH)
+            return []; // stop right there!
+        if (ssf.length + 1 === s.length) {
+            // at the very end, make an array of the possible strings
+            for (var _i = 0, _a = DialPadComponent_1.getFamilyFromChar(s.charAt(s.length - 1)); _i < _a.length; _i++) {
+                var c = _a[_i];
+                res.push((ssf + c).split('').reverse().join(''));
+            }
+        }
+        else {
+            for (var _b = 0, _c = DialPadComponent_1.getFamilyFromChar(s.charAt(ssf.length)); _b < _c.length; _b++) {
+                var c = _c[_b];
+                res = res.concat(this.recursiveConcat(s, ssf + c));
+            }
+        }
+        return res;
+    };
     return DialPadComponent;
 }());
-DialPadComponent = __decorate([
+DialPadComponent.MAX_LENGTH = 12;
+DialPadComponent = DialPadComponent_1 = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'dial-padder',
-        template: "\n    <div>\n      <br/>\n      <br/>\n      <label>Input String:</label>\n      <input [(ngModel)]=\"inputString\" (ngModelChange)=\"handleTextChange($event)\" placeholder=\"name\" />\n      <div >\n        <h2 [ngClass]=\"{palindrome: isPalindrome}\">{{outputString}}</h2>\n      </div>\n    </div>\n  ",
+        template: "\n    <div>\n      <br/>\n      <br/>\n      <label>Input String:</label>\n      <input [(ngModel)]=\"inputString\" (ngModelChange)=\"handleTextChange($event)\" placeholder=\"name\" />\n      <div >\n        <h2 [ngClass]=\"{palindrome: isPalindrome}\">{{outputString}}</h2>\n      </div>\n      <div *ngFor=\"let suggestion of possiblePalindromes\">\n        {{suggestion}}\n      </div>\n    </div>\n  ",
         styles: [__webpack_require__("../../../../../src/app/dial-pad-component.css")]
     })
 ], DialPadComponent);
 
+var DialPadComponent_1;
 //# sourceMappingURL=dial-pad-component.js.map
 
 /***/ }),
