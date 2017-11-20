@@ -12,6 +12,8 @@ import {UploadDisplayComponent} from './upload-display.component';
 import {FileUploadModule} from 'ng2-file-upload';
 import {UploadCompareComponent} from './upload-compare.component';
 import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {DialPadComponent} from './dial-pad-component';
 
 
 @NgModule({
@@ -20,13 +22,15 @@ import {HttpClientModule} from '@angular/common/http';
     DashboardComponent,
     UploadVisualizeComponent,
     UploadDisplayComponent,
-    UploadCompareComponent
+    UploadCompareComponent,
+    DialPadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FileUploadModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
