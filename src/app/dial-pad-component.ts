@@ -7,16 +7,15 @@ import * as assert from "assert";
   template: `
     <div>
       <br/>
-      <br/>
-      <label>Input String:</label>
-      <input [(ngModel)]="inputString" (ngModelChange)="handleTextChange($event)" placeholder="name" />
-      <div >
+      <input  class = "inputField" [(ngModel)]="inputString" (ngModelChange)="handleTextChange($event)" />
+      <div>
         <h2 [ngClass]="{palindrome: isPalindrome}">{{outputString}}</h2>
+        <div class="container">
+          <div *ngFor="let suggestion of possiblePalindromes">
+            {{suggestion}}
+          </div>
       </div>
-      <div class="container">
-        <div *ngFor="let suggestion of possiblePalindromes">
-          {{suggestion}}
-        </div>
+     
       </div>
     </div>
   `,
@@ -24,7 +23,8 @@ import * as assert from "assert";
 })
 
 export class DialPadComponent implements OnInit {
-  static MAX_LENGTH = 12;
+  static MAX_LENGTH = 8;
+  static MAX_SUGGESTION_LENGTH = 10;
   inputString: string;
   outputString: string;
   isPalindrome: boolean;
@@ -109,6 +109,7 @@ export class DialPadComponent implements OnInit {
       for (const possibleCompletion of possible){
         res.push(cleanedInput + possibleCompletion);
       }
+      // filter guard
       this.possiblePalindromes = res.filter((s) => {
         if (this.stringIsPalindrome(DialPadComponent.convertToDialpad(s))) {
           return true;
@@ -143,19 +144,18 @@ export class DialPadComponent implements OnInit {
   computePossibleStrings(s: string): string[] {
     console.log('Computing possible strings for: ', s);
     // prioritize a "mostly palindromic" solution
-    let res: string[] = [];
-
-    if (this.stringIsPalindrome(DialPadComponent.convertToDialpad(s.substring(1)))) {
-      for (const c of DialPadComponent.getFamilyFromChar(s.charAt(0))){
-        res.push(c);
+    const dialpadString = DialPadComponent.convertToDialpad(s);
+    let res = [];
+    for (let i = 1; i < DialPadComponent.MAX_SUGGESTION_LENGTH && i < s.length; i++) {
+      if (this.stringIsPalindrome(dialpadString.substring(i))) {
+        // need to match up to i
+        res = res.concat(this.recursiveConcat(s.substring(0, i), ''));
+        break;
       }
-      return res;
-    } else {
-      const lastIndex = Math.ceil(s.length / 2);
-      const toMiddle = s.substring(0, lastIndex);
-      res = res.concat(this.recursiveConcat(toMiddle, ''));
-      return res;
     }
+    res = res.concat(this.recursiveConcat(s, ''));
+    return res;
+
   }
 
   recursiveConcat(s: string, ssf: string): string[] {

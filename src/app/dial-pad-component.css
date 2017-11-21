@@ -7,14 +7,20 @@
 }
 
 h2 {
-  font-size: 100px;
+  font-size: 50px;
 }
 
 .container{
   display: flex;
   flex-flow: column wrap;
-  height: 40vh;
+  height: 60vh;
+}
 
+.inputField{
+  border-radius:5px;
+  padding:8px;
+  border:none;
+  border-bottom:1px solid #ccc;
 }
 
 @keyframes pulse {
