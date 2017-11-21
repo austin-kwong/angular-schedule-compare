@@ -100,7 +100,7 @@ export class DialPadComponent implements OnInit {
 
     this.outputString = DialPadComponent.convertToDialpad(this.inputString);
     this.isPalindrome = this.stringIsPalindrome(this.outputString);
-    const cleanedInput = this.inputString.trim().replace(/\s\n/g, '');
+    const cleanedInput = this.inputString.trim().replace(/\s/g, '');
 
     if (this.outputString.length > 0 && this.outputString.length < DialPadComponent.MAX_LENGTH && !this.isPalindrome) {
       const possible = this.computePossibleStrings(cleanedInput);
