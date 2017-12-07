@@ -3,16 +3,16 @@
 <div>
   <span>
     <label>Start</label>
-  <select class="select" title="Start Time" name="Begin Time">
-    <option (click)="setBeginTime(i)" *ngFor="let time of beginTimes; let i = index" value="{{i}}">{{time}}</option>
+  <select class="select" title="Start Time" name="beginTime" (change)="handleBeginChange($event)">
+    <option *ngFor="let time of beginTimes; let i = index" value="{{i}}">{{time}}</option>
   </select>
+
     <label>End</label>
 
-  <select class="select" title="End Time" name="startTime">
-    <option (click)="setEndTime(i)" *ngFor="let time of endTimes; let i = index" value="{{i}}">{{time}}</option>
+  <select class="select" title="End Time" name="endTime" (change)="handleEndChange($event)">
+    <option  *ngFor="let time of endTimes; let i = index" value="{{i}}">{{time}}</option>
   </select>
   </span>
-
 </div>
 <br/>
 <a  class="container">
