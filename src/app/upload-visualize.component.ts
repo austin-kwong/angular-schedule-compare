@@ -18,14 +18,14 @@ export class UploadVisualizeComponent implements OnInit {
   ngOnInit(): void {
     this.uploader = new FileUploader({url: URL});
 
-    // //mocking behaviour
-    // this.availability = {
-    //   0: new Array(48).fill(1),
-    //   1: new Array(48).fill(1),
-    //   2: new Array(48).fill(1),
-    //   3: new Array(48).fill(1),
-    //   4: new Array(48).fill(1)
-    // };
+    // mocking behaviour
+    this.availability = {
+      0: new Array(48).fill(1),
+      1: new Array(48).fill(1),
+      2: new Array(48).fill(1),
+      3: new Array(48).fill(1),
+      4: new Array(48).fill(1)
+    };
 
   }
   collectFile(): void {

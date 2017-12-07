@@ -11,8 +11,8 @@ import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core'
 export class UploadDisplayComponent implements OnInit, OnChanges {
   toDisplay: Availability;
   timesToDisplay: String[];
-  startIndex = 1;
-  endIndex = 48;
+  startIndex = 16;
+  endIndex = 38;
 
 
   @Input() availability: Availability;
@@ -49,46 +49,59 @@ export class UploadDisplayComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.toDisplay = this.availability;
     this.timesToDisplay = this.times;
-    this.setBeginTime(16);
-    this.setEndTime(39);
+    this.setBeginTime(this.startIndex);
+    this.setEndTime(this.endIndex);
   }
 
   ngOnChanges(changes: SimpleChanges) {
+    console.log('ngOnChanges():: called');
     this.availability = changes.availability.currentValue;
     this.setBeginTime(this.startIndex);
     this.setEndTime(this.endIndex);
   }
 
+  handleBeginChange(event: any) {
+    const i = parseInt(event.target.value, 10);
+    this.setBeginTime(i);
+  }
+
+  handleEndChange(event: any) {
+    const i = parseInt(event.target.value, 10);
+    this.setEndTime(i);
+  }
+
   setBeginTime(i: number) {
+    console.log('SetBeginTime():: called with: ', i);
     if (i + 1 < this.endIndex) {
-      this.startIndex = i + 1;
-      console.log('Start Index:', this.startIndex, 'End Index:', this.endIndex);
+      this.startIndex = i;
       this.toDisplay = {
-        0: this.availability[0].slice(this.startIndex - 1, this.endIndex - 1),
-        1: this.availability[1].slice(this.startIndex - 1, this.endIndex - 1),
-        2: this.availability[2].slice(this.startIndex - 1, this.endIndex - 1),
-        3: this.availability[3].slice(this.startIndex - 1, this.endIndex - 1),
-        4: this.availability[4].slice(this.startIndex - 1, this.endIndex - 1)
+        0: this.availability[0].slice(this.startIndex, this.endIndex),
+        1: this.availability[1].slice(this.startIndex, this.endIndex),
+        2: this.availability[2].slice(this.startIndex, this.endIndex),
+        3: this.availability[3].slice(this.startIndex, this.endIndex),
+        4: this.availability[4].slice(this.startIndex, this.endIndex)
       };
-      this.timesToDisplay = [this.times[0]].concat(this.times.slice(this.startIndex, this.endIndex));
+      this.timesToDisplay = [this.times[0]].concat(this.times.slice(this.startIndex + 1, this.endIndex + 1));
     }
   }
 
   setEndTime(i: number) {
 
-    if (this.startIndex < i + 2) {
-      this.endIndex = i + 2;
-      console.log('Start Index:', this.startIndex, 'End Index:', this.endIndex);
+    console.log('SetEndTime():: called with: ', i);
+
+    if (this.startIndex < i +1) {
+      this.endIndex = i + 1;
       this.toDisplay = {
-        0: this.availability[0].slice(this.startIndex - 1, this.endIndex - 1),
-        1: this.availability[1].slice(this.startIndex - 1, this.endIndex - 1),
-        2: this.availability[2].slice(this.startIndex - 1, this.endIndex - 1),
-        3: this.availability[3].slice(this.startIndex - 1, this.endIndex - 1),
-        4: this.availability[4].slice(this.startIndex - 1, this.endIndex - 1)
+        0: this.availability[0].slice(this.startIndex, this.endIndex),
+        1: this.availability[1].slice(this.startIndex, this.endIndex),
+        2: this.availability[2].slice(this.startIndex, this.endIndex),
+        3: this.availability[3].slice(this.startIndex, this.endIndex),
+        4: this.availability[4].slice(this.startIndex, this.endIndex)
       };
 
 
-      this.timesToDisplay = [this.times[0]].concat(this.times.slice(this.startIndex, this.endIndex));
+      this.timesToDisplay = [this.times[0]].concat(this.times.slice(this.startIndex + 1, this.endIndex + 1));
+      console.log('SetEndTime():: updated timesToDisplay: ', this.endIndex + 1);
     }
   }
 }
