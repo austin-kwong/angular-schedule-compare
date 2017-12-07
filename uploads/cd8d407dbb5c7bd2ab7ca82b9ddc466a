@@ -1,0 +1,455 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//UBC Course Schedule//iCal 1.0//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VTIMEZONE
+TZID:America/Vancouver
+TZURL:http://tzurl.org/zoneinfo/America/Vancouver
+X-LIC-LOCATION:America/Vancouver
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0800
+TZOFFSETTO:-0700
+TZNAME:PDT
+DTSTART:20070311T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0800
+TZNAME:PST
+DTSTART:20071104T020000
+RRULE:FREQ=YEARLY;BYMONTH=11;BYDAY=1SU
+END:STANDARD
+BEGIN:STANDARD
+TZOFFSETFROM:-081228
+TZOFFSETTO:-0800
+TZNAME:PST
+DTSTART:18840101T000000
+RDATE:18840101T000000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0800
+TZOFFSETTO:-0700
+TZNAME:PDT
+DTSTART:19180414T020000
+RDATE:19180414T020000
+RDATE:19460428T020000
+RDATE:19470427T020000
+RDATE:19480425T020000
+RDATE:19490424T020000
+RDATE:19500430T020000
+RDATE:19510429T020000
+RDATE:19520427T020000
+RDATE:19530426T020000
+RDATE:19540425T020000
+RDATE:19550424T020000
+RDATE:19560429T020000
+RDATE:19570428T020000
+RDATE:19580427T020000
+RDATE:19590426T020000
+RDATE:19600424T020000
+RDATE:19610430T020000
+RDATE:19620429T020000
+RDATE:19630428T020000
+RDATE:19640426T020000
+RDATE:19650425T020000
+RDATE:19660424T020000
+RDATE:19670430T020000
+RDATE:19680428T020000
+RDATE:19690427T020000
+RDATE:19700426T020000
+RDATE:19710425T020000
+RDATE:19720430T020000
+RDATE:19730429T020000
+RDATE:19740428T020000
+RDATE:19750427T020000
+RDATE:19760425T020000
+RDATE:19770424T020000
+RDATE:19780430T020000
+RDATE:19790429T020000
+RDATE:19800427T020000
+RDATE:19810426T020000
+RDATE:19820425T020000
+RDATE:19830424T020000
+RDATE:19840429T020000
+RDATE:19850428T020000
+RDATE:19860427T020000
+RDATE:19870405T020000
+RDATE:19880403T020000
+RDATE:19890402T020000
+RDATE:19900401T020000
+RDATE:19910407T020000
+RDATE:19920405T020000
+RDATE:19930404T020000
+RDATE:19940403T020000
+RDATE:19950402T020000
+RDATE:19960407T020000
+RDATE:19970406T020000
+RDATE:19980405T020000
+RDATE:19990404T020000
+RDATE:20000402T020000
+RDATE:20010401T020000
+RDATE:20020407T020000
+RDATE:20030406T020000
+RDATE:20040404T020000
+RDATE:20050403T020000
+RDATE:20060402T020000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0800
+TZNAME:PST
+DTSTART:19181027T020000
+RDATE:19181027T020000
+RDATE:19450930T020000
+RDATE:19461013T020000
+RDATE:19470928T020000
+RDATE:19480926T020000
+RDATE:19490925T020000
+RDATE:19500924T020000
+RDATE:19510930T020000
+RDATE:19520928T020000
+RDATE:19530927T020000
+RDATE:19540926T020000
+RDATE:19550925T020000
+RDATE:19560930T020000
+RDATE:19570929T020000
+RDATE:19580928T020000
+RDATE:19590927T020000
+RDATE:19600925T020000
+RDATE:19610924T020000
+RDATE:19621028T020000
+RDATE:19631027T020000
+RDATE:19641025T020000
+RDATE:19651031T020000
+RDATE:19661030T020000
+RDATE:19671029T020000
+RDATE:19681027T020000
+RDATE:19691026T020000
+RDATE:19701025T020000
+RDATE:19711031T020000
+RDATE:19721029T020000
+RDATE:19731028T020000
+RDATE:19741027T020000
+RDATE:19751026T020000
+RDATE:19761031T020000
+RDATE:19771030T020000
+RDATE:19781029T020000
+RDATE:19791028T020000
+RDATE:19801026T020000
+RDATE:19811025T020000
+RDATE:19821031T020000
+RDATE:19831030T020000
+RDATE:19841028T020000
+RDATE:19851027T020000
+RDATE:19861026T020000
+RDATE:19871025T020000
+RDATE:19881030T020000
+RDATE:19891029T020000
+RDATE:19901028T020000
+RDATE:19911027T020000
+RDATE:19921025T020000
+RDATE:19931031T020000
+RDATE:19941030T020000
+RDATE:19951029T020000
+RDATE:19961027T020000
+RDATE:19971026T020000
+RDATE:19981025T020000
+RDATE:19991031T020000
+RDATE:20001029T020000
+RDATE:20011028T020000
+RDATE:20021027T020000
+RDATE:20031026T020000
+RDATE:20041031T020000
+RDATE:20051030T020000
+RDATE:20061029T020000
+END:STANDARD
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0800
+TZOFFSETTO:-0700
+TZNAME:PWT
+DTSTART:19420209T020000
+RDATE:19420209T020000
+END:DAYLIGHT
+BEGIN:DAYLIGHT
+TZOFFSETFROM:-0700
+TZOFFSETTO:-0700
+TZNAME:PPT
+DTSTART:19450814T160000
+RDATE:19450814T160000
+END:DAYLIGHT
+BEGIN:STANDARD
+TZOFFSETFROM:-0800
+TZOFFSETTO:-0800
+TZNAME:PST
+DTSTART:19870101T000000
+RDATE:19870101T000000
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20171128T235959;INTERVAL=1;BYDAY=TU
+SUMMARY:CPSC 310 102
+LOCATION:Hugh Dempster Pavilion\, Room 110
+DESCRIPTION:There are currently 4 sections of CPSC 310 showing.  Of those 4\n\nsections we are only going to offer 3.  Sections 101 and 201 are\n\ndefinitely going ahead but only one of sections 102 or 202 will be\n\noffered. For planing purposes you can assume that the the time shown\n\nfor sections 102 and 202 coresponds to the time it will be offered at\,\n\nif it is the one ultimately offered.  Unfortunately we don't know\n\nwhich section it will be offered\, butHopefully this will be resolved by the time\n\n3rd year students have to register. To provide students with the most\n\nregistration flexibility we are using 3 wait lists. Each wait list has a specifipurpose so once the 310 section you want is full register on the wait list that best meets your needs. If you can only take 310 in term 1 register on wait list WT1. If you can only take 310 in term 2 register on wait list WT2. If you are willing to take 310 in either term register in WTB.\n\nTo process the wait lists we will merge all the lists and as a seat\n\nbecomes available we will assign the seat to the person with the\n\nhighest priority who is willing to take the seat. Willingness to take\n\na seat is captured by the wait list the student registered in. For\n\nexample if seat becomes availaibe in section 201 then the highest\n\npriority student from  wait lists WTB and WT2 will get the\n\nseat. When processing the wait lists students will be prioritized\n\nacross guidelines\n\n(see https://www.cs.ubc.ca/students/undergrad/courses/waitlists).\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd46780
+DTSTART;TZID=America/Vancouver:20170905T093000
+DTEND;TZID=America/Vancouver:20170905T110000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20171130T235959;INTERVAL=1;BYDAY=TH
+SUMMARY:CPSC 310 102
+LOCATION:Hugh Dempster Pavilion\, Room 110
+DESCRIPTION:There are currently 4 sections of CPSC 310 showing.  Of those 4\n\nsections we are only going to offer 3.  Sections 101 and 201 are\n\ndefinitely going ahead but only one of sections 102 or 202 will be\n\noffered. For planing purposes you can assume that the the time shown\n\nfor sections 102 and 202 coresponds to the time it will be offered at\,\n\nif it is the one ultimately offered.  Unfortunately we don't know\n\nwhich section it will be offered\, butHopefully this will be resolved by the time\n\n3rd year students have to register. To provide students with the most\n\nregistration flexibility we are using 3 wait lists. Each wait list has a specifipurpose so once the 310 section you want is full register on the wait list that best meets your needs. If you can only take 310 in term 1 register on wait list WT1. If you can only take 310 in term 2 register on wait list WT2. If you are willing to take 310 in either term register in WTB.\n\nTo process the wait lists we will merge all the lists and as a seat\n\nbecomes available we will assign the seat to the person with the\n\nhighest priority who is willing to take the seat. Willingness to take\n\na seat is captured by the wait list the student registered in. For\n\nexample if seat becomes availaibe in section 201 then the highest\n\npriority student from  wait lists WTB and WT2 will get the\n\nseat. When processing the wait lists students will be prioritized\n\nacross guidelines\n\n(see https://www.cs.ubc.ca/students/undergrad/courses/waitlists).\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd145363
+DTSTART;TZID=America/Vancouver:20170907T093000
+DTEND;TZID=America/Vancouver:20170907T110000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20171130T235959;INTERVAL=1;BYDAY=TH
+SUMMARY:CPSC 310 L1F
+LOCATION:Institute for Computing (ICICS/CS)\, Room X350
+DESCRIPTION:
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd201545
+DTSTART;TZID=America/Vancouver:20170907T140000
+DTEND;TZID=America/Vancouver:20170907T160000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20171127T235959;INTERVAL=1;BYDAY=MO
+SUMMARY:CPSC 320 101
+LOCATION:Hugh Dempster Pavilion\, Room 110
+DESCRIPTION:Note: Depending upon how many students sign-up for this section either an additional tutorial section will be opened or the existing tutorials will be expanded slightly. However\, there is no guarantee that the resulting seats will fit your time table so make sure to take that into consideration when planning your time table.\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd522715
+DTSTART;TZID=America/Vancouver:20170904T140000
+DTEND;TZID=America/Vancouver:20170904T150000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20171129T235959;INTERVAL=1;BYDAY=WE
+SUMMARY:CPSC 320 101
+LOCATION:Hugh Dempster Pavilion\, Room 110
+DESCRIPTION:Note: Depending upon how many students sign-up for this section either an additional tutorial section will be opened or the existing tutorials will be expanded slightly. However\, there is no guarantee that the resulting seats will fit your time table so make sure to take that into consideration when planning your time table.\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd196244
+DTSTART;TZID=America/Vancouver:20170906T140000
+DTEND;TZID=America/Vancouver:20170906T150000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20171201T235959;INTERVAL=1;BYDAY=FR
+SUMMARY:CPSC 320 101
+LOCATION:Hugh Dempster Pavilion\, Room 110
+DESCRIPTION:Note: Depending upon how many students sign-up for this section either an additional tutorial section will be opened or the existing tutorials will be expanded slightly. However\, there is no guarantee that the resulting seats will fit your time table so make sure to take that into consideration when planning your time table.\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd557816
+DTSTART;TZID=America/Vancouver:20170908T140000
+DTEND;TZID=America/Vancouver:20170908T150000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20171127T235959;INTERVAL=1;BYDAY=MO
+SUMMARY:CPSC 320 T1E
+LOCATION:Forest Sciences Centre\, Room 1001
+DESCRIPTION:
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd304962
+DTSTART;TZID=America/Vancouver:20170904T090000
+DTEND;TZID=America/Vancouver:20170904T100000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20171128T235959;INTERVAL=1;BYDAY=TU
+SUMMARY:ENGL 112 17A
+LOCATION:Buchanan\, Room D222
+DESCRIPTION:**In order to remain registered in this class\, all students must fulfill the First-Year English Course Entry Requirement by the published deadlines.  For detailed information\, please visit http://english.ubc.ca/first-year-english/frequently-asked-questions-faq/.\n\n**No student may take two First-Year English courses at the same time.\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd557835
+DTSTART;TZID=America/Vancouver:20170905T180000
+DTEND;TZID=America/Vancouver:20170905T210000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20171127T235959;INTERVAL=1;BYDAY=MO
+SUMMARY:LING 101 005
+LOCATION:Buchanan\, Room A101
+DESCRIPTION:
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd172898
+DTSTART;TZID=America/Vancouver:20170904T080000
+DTEND;TZID=America/Vancouver:20170904T090000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20171129T235959;INTERVAL=1;BYDAY=WE
+SUMMARY:LING 101 005
+LOCATION:Buchanan\, Room A101
+DESCRIPTION:
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd204205
+DTSTART;TZID=America/Vancouver:20170906T080000
+DTEND;TZID=America/Vancouver:20170906T090000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20171201T235959;INTERVAL=1;BYDAY=FR
+SUMMARY:LING 101 005
+LOCATION:Buchanan\, Room A101
+DESCRIPTION:
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd113247
+DTSTART;TZID=America/Vancouver:20170908T080000
+DTEND;TZID=America/Vancouver:20170908T090000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180403T235959;INTERVAL=1;BYDAY=TU
+SUMMARY:CPSC 304 202
+LOCATION:Hugh Dempster Pavilion\, Room 110
+DESCRIPTION:
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd302865
+DTSTART;TZID=America/Vancouver:20180102T123000
+DTEND;TZID=America/Vancouver:20180102T140000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180405T235959;INTERVAL=1;BYDAY=TH
+SUMMARY:CPSC 304 202
+LOCATION:Hugh Dempster Pavilion\, Room 110
+DESCRIPTION:
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd262209
+DTSTART;TZID=America/Vancouver:20180104T123000
+DTEND;TZID=America/Vancouver:20180104T140000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180404T235959;INTERVAL=1;BYDAY=WE
+SUMMARY:CPSC 304 T2G
+LOCATION:Institute for Computing (ICICS/CS)\, Room X350
+DESCRIPTION:
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd258762
+DTSTART;TZID=America/Vancouver:20180103T110000
+DTEND;TZID=America/Vancouver:20180103T120000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180403T235959;INTERVAL=1;BYDAY=TU
+SUMMARY:CPSC 322 2W1
+LOCATION:\, Room 
+DESCRIPTION:
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd127530
+DTSTART;TZID=America/Vancouver:20180102T093000
+DTEND;TZID=America/Vancouver:20180102T110000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180405T235959;INTERVAL=1;BYDAY=TH
+SUMMARY:CPSC 322 2W1
+LOCATION:\, Room 
+DESCRIPTION:
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd224131
+DTSTART;TZID=America/Vancouver:20180104T093000
+DTEND;TZID=America/Vancouver:20180104T110000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180402T235959;INTERVAL=1;BYDAY=MO
+SUMMARY:CPSC 340 2W1
+LOCATION:\, Room 
+DESCRIPTION:We are attempting to find someone to teach a second section of 340 in this term. If you are interested in taking 340 in this term please register on this wait list. There is no guarantee that we will be able to offer a section of this course nor can we provide additional information at what time it might be offered.\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd550855
+DTSTART;TZID=America/Vancouver:20180101T130000
+DTEND;TZID=America/Vancouver:20180101T140000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180404T235959;INTERVAL=1;BYDAY=WE
+SUMMARY:CPSC 340 2W1
+LOCATION:\, Room 
+DESCRIPTION:We are attempting to find someone to teach a second section of 340 in this term. If you are interested in taking 340 in this term please register on this wait list. There is no guarantee that we will be able to offer a section of this course nor can we provide additional information at what time it might be offered.\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649647abcd53132
+DTSTART;TZID=America/Vancouver:20180103T130000
+DTEND;TZID=America/Vancouver:20180103T140000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180406T235959;INTERVAL=1;BYDAY=FR
+SUMMARY:CPSC 340 2W1
+LOCATION:\, Room 
+DESCRIPTION:We are attempting to find someone to teach a second section of 340 in this term. If you are interested in taking 340 in this term please register on this wait list. There is no guarantee that we will be able to offer a section of this course nor can we provide additional information at what time it might be offered.\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649648abcd226083
+DTSTART;TZID=America/Vancouver:20180105T130000
+DTEND;TZID=America/Vancouver:20180105T140000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180402T235959;INTERVAL=1;BYDAY=MO
+SUMMARY:MATH 307 201
+LOCATION:Pharmaceutical Sciences Building\, Room 1201
+DESCRIPTION:The SIS will enforce automatically prerequisites for this course.  Students will not be able to register themselves if they do not have the correct prerequisites.  If you need to get your UBC file updated with qualifications such as Transfer Credits\, take care of that by sending documentation to admissions.inquiry@ubc.ca.\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649648abcd312204
+DTSTART;TZID=America/Vancouver:20180101T120000
+DTEND;TZID=America/Vancouver:20180101T130000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180404T235959;INTERVAL=1;BYDAY=WE
+SUMMARY:MATH 307 201
+LOCATION:Pharmaceutical Sciences Building\, Room 1101
+DESCRIPTION:The SIS will enforce automatically prerequisites for this course.  Students will not be able to register themselves if they do not have the correct prerequisites.  If you need to get your UBC file updated with qualifications such as Transfer Credits\, take care of that by sending documentation to admissions.inquiry@ubc.ca.\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649648abcd283285
+DTSTART;TZID=America/Vancouver:20180103T120000
+DTEND;TZID=America/Vancouver:20180103T130000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180406T235959;INTERVAL=1;BYDAY=FR
+SUMMARY:MATH 307 201
+LOCATION:Pharmaceutical Sciences Building\, Room 1201
+DESCRIPTION:The SIS will enforce automatically prerequisites for this course.  Students will not be able to register themselves if they do not have the correct prerequisites.  If you need to get your UBC file updated with qualifications such as Transfer Credits\, take care of that by sending documentation to admissions.inquiry@ubc.ca.\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649648abcd228029
+DTSTART;TZID=America/Vancouver:20180105T120000
+DTEND;TZID=America/Vancouver:20180105T130000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180403T235959;INTERVAL=1;BYDAY=TU
+SUMMARY:STAT 302 201
+LOCATION:Earth Sciences Building\, Room 1012
+DESCRIPTION:Equivalent Math 302.\n\nWe are unable to offer a wait list for Stat 302. Students must monitor the course enrollment and watch for a seat to open up. There is usually a lot of movement leading up to the beginning of the course\, and we find that most students are able to get a seat if they are dilligent about watching the enrollment for a seat to open up.\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649648abcd453341
+DTSTART;TZID=America/Vancouver:20180102T140000
+DTEND;TZID=America/Vancouver:20180102T153000
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20170919T031049Z
+RRULE:FREQ=WEEKLY;WKST=MO;UNTIL=20180405T235959;INTERVAL=1;BYDAY=TH
+SUMMARY:STAT 302 201
+LOCATION:Earth Sciences Building\, Room 1012
+DESCRIPTION:Equivalent Math 302.\n\nWe are unable to offer a wait list for Stat 302. Students must monitor the course enrollment and watch for a seat to open up. There is usually a lot of movement leading up to the beginning of the course\, and we find that most students are able to get a seat if they are dilligent about watching the enrollment for a seat to open up.\n\n
+DTSTAMP:20170919T031049Z
+UID:12341505790649648abcd544356
+DTSTART;TZID=America/Vancouver:20180104T140000
+DTEND;TZID=America/Vancouver:20180104T153000
+END:VEVENT
+END:VCALENDAR
+

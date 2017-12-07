@@ -3,7 +3,9 @@
   grid-template-columns: 10% repeat(5, 1fr);
   grid-template-rows: auto;
   grid-template-areas:"times monday tuesday wednesday thursday friday";
-  overflow: scroll;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  background-color: #eeeeee;
 
 }
 
@@ -32,12 +34,22 @@
 
 .timeSegment{
 	min-width: 50px;
+  min-height: 25px;
+  margin: .5pt;
 }
 
 .timeSegment.available {
   background-color: chartreuse;
 }
+
+.timeSegment.available:hover{
+  box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  z-index: 100;
+}
+
 .timeSegment.notAvailable{
   background-color: darkgrey;
 }
+
+.select {padding:9px 0;border:none;border-bottom:1px solid #ccc}
 

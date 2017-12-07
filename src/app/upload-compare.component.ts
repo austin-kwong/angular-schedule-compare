@@ -44,6 +44,7 @@ export class UploadCompareComponent implements OnInit {
     form.append('files[]', this.file2, this.file2.name);
     console.log(form.get('files[]'));
     this.http.post(URL, form).subscribe((response) => {
+      console.log('New availability received...');
       self.availability = response;
     });
   }

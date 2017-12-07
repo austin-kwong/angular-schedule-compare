@@ -1,7 +1,7 @@
 <h2>Upload two UBC iCal.ics to visualize their intersection below!</h2>
 <div style="margin-top: 30px;">
-  <input type="file" name="cal1" accept=".ics" (change)="onChange($event, 1)" required/><br/><br/>
-  <input type="file" name="cal2"  accept=".ics" (change)="onChange($event, 2)" required/><br/><br/>
-  <input type="submit" value="Upload" (click)="collectFiles()"/>
+  <input class="btn" type="file" name="cal1" accept=".ics" (change)="onChange($event, 1)" required/><br/><br/>
+  <input class="btn" type="file" name="cal2"  accept=".ics" (change)="onChange($event, 2)" required/><br/><br/>
+  <input class="btn" type="submit" value="Upload" (click)="collectFiles()"/>
 </div>
 <upload-display *ngIf="availability" [availability]="availability"></upload-display>

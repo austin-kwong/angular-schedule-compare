@@ -1,43 +1,55 @@
+<br/>
+
+<div>
+  <span>
+    <label>Start</label>
+  <select class="select" title="Start Time" name="Begin Time">
+    <option (click)="setBeginTime(i)" *ngFor="let time of beginTimes; let i = index" value="{{i}}">{{time}}</option>
+  </select>
+    <label>End</label>
+
+  <select class="select" title="End Time" name="startTime">
+    <option (click)="setEndTime(i)" *ngFor="let time of endTimes; let i = index" value="{{i}}">{{time}}</option>
+  </select>
+  </span>
+
+</div>
+<br/>
 <a  class="container">
   <a class="timeDisplay">
-    <div *ngFor="let time of times" class="timeSegment">
+    <div *ngFor="let time of timesToDisplay" class="timeSegment">
       {{time}}
     </div>
   </a>
   <div style="grid-area: monday" class="timeColumn">
     Monday
-    <div *ngFor="let timeSlot of availability[0]">
+    <div *ngFor="let timeSlot of toDisplay[0]">
       <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
     </div>
   </div>
   <div style="grid-area: tuesday" class="timeColumn">
     Tuesday
-    <div *ngFor="let timeSlot of availability[1]">
+    <div *ngFor="let timeSlot of toDisplay[1]">
       <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
     </div>
   </div>
   <div style="grid-area: wednesday" class="timeColumn">
     Wednesday
-    <div *ngFor="let timeSlot of availability[2]">
+    <div *ngFor="let timeSlot of toDisplay[2]">
       <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
     </div>
   </div>
   <div style="grid-area: thursday" class="timeColumn">
     Thursday
-    <div *ngFor="let timeSlot of availability[3]">
+    <div *ngFor="let timeSlot of toDisplay[3]">
       <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
     </div>
   </div>
   <div style="grid-area: friday" class="timeColumn">
     Friday
-    <div *ngFor="let timeSlot of availability[4]">
+    <div *ngFor="let timeSlot of toDisplay[4]">
       <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
     </div>
   </div>
 
-<!--
-  <div *ngFor="let timeSlot of availability">
-    <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
-  </div>
-  -->
 </a>
