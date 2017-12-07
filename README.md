@@ -1,28 +1,21 @@
-# AngularScheduleCompare
+# Overview
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.4.2.
+Allow users to upload their UBC course schedule and easily visualize it. Allows comparison with other UBC students to find when they both do not have courses.
 
-## Development server
+Uses ng2 for front-end, with an express api.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Visualize Schedule
 
-## Code scaffolding
+-   Upload a UBC .ics file, and visualize it. Green labels indicate when they have a class
+-   Select the time interval you want to display (24-hour clock)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Compare Schedules
 
-## Build
+-   Uplaod two UBC .ics files and visualize the complement of the intersection. Green labels indicates when both people **do not** have courses
+-   Select the time interval you want to display (24-hour clock)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## DialPadder
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+-   Input a string to get it's dial-pad equivalent. E.g. [ABC] map to 1
+-   Palindromic diap-pad strings are highlighted in orange
+-   Provides completion suggestions to make the input string so far become 'dial-pad palindromic' (orange highlight)
