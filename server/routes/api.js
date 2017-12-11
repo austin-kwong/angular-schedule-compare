@@ -154,25 +154,6 @@ function matchDay(d1, d2){
 }
 
 
-class ClassBlock{
-  STARTTIME;
-  ENDTIME;
-  LOCATION;
-  CLASSNAME;
-
-  constructor(startTime, endTime, location, className){
-    this.STARTTIME = startTime;
-    this.ENDTIME = endTime;
-    this.LOCATION = location;
-    this.CLASSNAME = className;
-  }
-}
-
-class MatchBlock{
-  DISTANCE;
-}
-
-
 
 
 
