@@ -56,6 +56,8 @@ export class UploadDisplayComponent implements OnInit, OnChanges {
   ngOnChanges(changes: SimpleChanges) {
     console.log('ngOnChanges():: called');
     this.availability = changes.availability.currentValue;
+    console.log('ngOnChanges():: availability change');
+    console.log(JSON.stringify(this.availability));
     this.setBeginTime(this.startIndex);
     this.setEndTime(this.endIndex);
   }
@@ -89,7 +91,7 @@ export class UploadDisplayComponent implements OnInit, OnChanges {
 
     console.log('SetEndTime():: called with: ', i);
 
-    if (this.startIndex < i +1) {
+    if (this.startIndex < i + 1) {
       this.endIndex = i + 1;
       this.toDisplay = {
         0: this.availability[0].slice(this.startIndex, this.endIndex),
@@ -104,14 +106,32 @@ export class UploadDisplayComponent implements OnInit, OnChanges {
       console.log('SetEndTime():: updated timesToDisplay: ', this.endIndex + 1);
     }
   }
+
+  mouseEnterTimeSegment(event: any, wk: number, i: number) {
+    console.log('hoverTimeSegment():: called with ', wk, i);
+    const actualPos = i + this.startIndex;
+    if (this.availability[wk][actualPos] !== 0) {
+      event.target.innerHTML = (this.availability[wk][actualPos].LOCATION.replace('\\', ''));
+    }
+  }
+
+  mouseLeaveTimeSegment(event: any, wk: number, i: number) {
+    console.log('hoverTimeSegment():: called with ', wk, i);
+    const actualPos = i + this.startIndex;
+    if (this.availability[wk][actualPos] !== 0) {
+      event.target.innerHTML = (this.availability[wk][actualPos].CLASSNAME);
+    }
+  }
+
+
 }
 
 export interface Availability {
-  0: number[];
-  1: number[];
-  2: number[];
-  3: number[];
-  4: number[];
+  0: Object[];
+  1: Object[];
+  2: Object[];
+  3: Object[];
+  4: Object[];
 }
 
 

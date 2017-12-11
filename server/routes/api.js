@@ -9,7 +9,6 @@ const router = express.Router();
 
 const yearToKeep = 2017;
 
-let previousSchedule;
 
 /* GET api listing. */
 router.get('/', (req, res) => {
@@ -57,17 +56,20 @@ function getAvailabilityObject(filePath){
         // for (let prop in calendarObject.VCALENDAR.VEVENT){
         //   console.log(prop);
         // }
-        console.log(JSON.stringify(calendarObject));
-        if(calendarObject.VCALENDAR[0].VTIMEZONE){
-          console.log(calendarObject.VCALENDAR[0].VTIMEZONE);
-        }
+        //console.log(JSON.stringify(calendarObject));
+        //if(calendarObject.VCALENDAR[0].VTIMEZONE){
+        //  console.log(calendarObject.VCALENDAR[0].VTIMEZONE);
+        //}
         let eventPairs = [];
+        let events = [];
         if(calendarObject.VCALENDAR && calendarObject.VCALENDAR[0] && calendarObject.VCALENDAR[0].VEVENT) {
           for (let event of calendarObject.VCALENDAR[0].VEVENT) {
-            // console.log(event);
+            console.log(event);
             eventPairs.push({
               "STARTTIME": event["DTSTART;TZID=America/Vancouver"],
-              "ENDTIME": event["DTEND;TZID=America/Vancouver"]
+              "ENDTIME": event["DTEND;TZID=America/Vancouver"],
+              "LOCATION": event["LOCATION"],
+              "SUMMARY": event["SUMMARY"]
             });
           }
           let availability = {
@@ -120,7 +122,7 @@ function getAvailabilityObject(filePath){
             // console.log("startDate.getTime(): ", startDate.getTime());
             // console.log("Populating starting from ", beginIndex, "for duration: ", duration);
             for (let i = 0; i < duration; i++) {
-              availability[startDate.getDay() - 1][beginIndex + i] = 1;
+              availability[startDate.getDay() - 1][beginIndex + i] = {STARTTIME: startDate, ENDTIME: endDate, LOCATION: event.LOCATION, CLASSNAME: event.SUMMARY};
             }
 
           }
@@ -150,6 +152,27 @@ function matchDay(d1, d2){
   }
   return res;
 }
+
+
+class ClassBlock{
+  STARTTIME;
+  ENDTIME;
+  LOCATION;
+  CLASSNAME;
+
+  constructor(startTime, endTime, location, className){
+    this.STARTTIME = startTime;
+    this.ENDTIME = endTime;
+    this.LOCATION = location;
+    this.CLASSNAME = className;
+  }
+}
+
+class MatchBlock{
+  DISTANCE;
+}
+
+
 
 
 

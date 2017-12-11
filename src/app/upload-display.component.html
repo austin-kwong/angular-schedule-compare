@@ -23,32 +23,32 @@
   </a>
   <div style="grid-area: monday" class="timeColumn">
     Monday
-    <div *ngFor="let timeSlot of toDisplay[0]">
-      <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
+    <div *ngFor="let timeSlot of toDisplay[0]; let i = index">
+      <div (mouseleave)="mouseLeaveTimeSegment($event, 0, i)"  (mouseenter)="mouseEnterTimeSegment($event, 0, i)" class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">{{timeSlot.CLASSNAME}}</div>
     </div>
   </div>
   <div style="grid-area: tuesday" class="timeColumn">
     Tuesday
-    <div *ngFor="let timeSlot of toDisplay[1]">
-      <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
+    <div *ngFor="let timeSlot of toDisplay[1]; let i = index">
+      <div (mouseleave)="mouseLeaveTimeSegment($event, 1, i)"  (mouseenter)="mouseEnterTimeSegment($event, 1, i)"  class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">{{timeSlot.CLASSNAME}}</div>
     </div>
   </div>
   <div style="grid-area: wednesday" class="timeColumn">
     Wednesday
-    <div *ngFor="let timeSlot of toDisplay[2]">
-      <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
+    <div *ngFor="let timeSlot of toDisplay[2]; let i = index">
+      <div (mouseleave)="mouseLeaveTimeSegment($event, 2, i)"  (mouseenter)="mouseEnterTimeSegment($event, 2, i)" class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">{{timeSlot.CLASSNAME}}</div>
     </div>
   </div>
   <div style="grid-area: thursday" class="timeColumn">
     Thursday
-    <div *ngFor="let timeSlot of toDisplay[3]">
-      <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
+    <div *ngFor="let timeSlot of toDisplay[3]; let i = index">
+      <div (mouseleave)="mouseLeaveTimeSegment($event, 3, i)"  (mouseenter)="mouseEnterTimeSegment($event, 3, i)" class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">{{timeSlot.CLASSNAME}}</div>
     </div>
   </div>
   <div style="grid-area: friday" class="timeColumn">
     Friday
-    <div *ngFor="let timeSlot of toDisplay[4]">
-      <div class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">&nbsp;</div>
+    <div *ngFor="let timeSlot of toDisplay[4]l let i = index">
+      <div (mouseleave)="mouseLeaveTimeSegment($event, 4, i)"  (mouseenter)="mouseEnterTimeSegment($event, 4, i)" class="timeSegment" [ngClass]="{'available': timeSlot, 'notAvailable': !timeSlot}">{{timeSlot.CLASSNAME}}</div>
     </div>
   </div>
 

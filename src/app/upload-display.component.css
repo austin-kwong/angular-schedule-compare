@@ -22,6 +22,7 @@
   left: 0;
   background-color: #eeeeee;
   opacity: 0.8;
+  pointer-events: none;
 }
 
 .timeColumn{
@@ -34,8 +35,14 @@
 
 .timeSegment{
 	min-width: 50px;
-  min-height: 25px;
+  min-height: 30px;
+  max-height: 30px;
   margin: .5pt;
+  padding: 1px;
+  color: black;
+  align-content: center;
+  cursor: default;
+  overflow: hidden;
 }
 
 .timeSegment.available {
@@ -46,6 +53,21 @@
   box-shadow:0 8px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
   z-index: 100;
 }
+
+
+.timeSegment.available.far{
+  background-color: red;
+}
+
+.timeSegment.available.medium{
+  background-color: orange;
+}
+
+.timeSegment.available.close{
+  background-color: lightgreen;
+}
+
+
 
 .timeSegment.notAvailable{
   background-color: darkgrey;
