@@ -111,15 +111,23 @@ export class UploadDisplayComponent implements OnInit, OnChanges {
     console.log('hoverTimeSegment():: called with ', wk, i);
     const actualPos = i + this.startIndex;
     if (this.availability[wk][actualPos] !== 0) {
-      event.target.innerHTML = (this.availability[wk][actualPos].LOCATION.replace('\\', ''));
+      const location = this.availability[wk][actualPos].LOCATION.replace('\\', '');
+      if (!location.isEmpty()) {
+        console.log(location);
+        event.target.innerHTML = location;
+      }
     }
   }
 
   mouseLeaveTimeSegment(event: any, wk: number, i: number) {
     console.log('hoverTimeSegment():: called with ', wk, i);
     const actualPos = i + this.startIndex;
-    if (this.availability[wk][actualPos] !== 0) {
-      event.target.innerHTML = (this.availability[wk][actualPos].CLASSNAME);
+    if (this.availability[wk][actualPos] !== 0 && this.availability[wk][actualPos] !== undefined) {
+      const clazzName = this.availability[wk][actualPos].CLASSNAME;
+      if (!clazzName.isEmpty()) {
+        console.log(clazzName);
+        event.target.innerHTML = location;
+      }
     }
   }
 

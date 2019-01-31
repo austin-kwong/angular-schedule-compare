@@ -7,7 +7,7 @@ const ical2json = require('ical2json');
 
 const router = express.Router();
 
-const yearToKeep = 2017;
+const yearToKeep = 2019;
 
 
 /* GET api listing. */
@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
 
 router.post('/visualize',upload.single('file'), (req, res) => {
   getAvailabilityObject(req.file.path).then((values) => {
-    //console.log(values);
+    console.log(values);
     res.status(200).send(values);
   }).catch((error) => {
     res.status(500).send('File selected is not a recognized type');
